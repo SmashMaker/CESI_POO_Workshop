@@ -8,4 +8,6 @@ add_executable(CESI_POO_Workshop_4 main.cpp
         Rectangle.h
         Rectangle.cpp
         Carre.h
-        Carre.cpp)
+        Carre.cpp
+        ChainObjet2D.h
+        ChainObjet2D.cpp)
