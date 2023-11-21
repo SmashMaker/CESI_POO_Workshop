@@ -11,18 +11,20 @@ class ChainObjet2D {
 private:
     Objet2D* head;
     Objet2D* tail;
+    Objet2D* processTail();
 public:
-    // Construc
+    void checkIfAllGood(); // Debugging
+    // Construct
     ChainObjet2D(void);
     ChainObjet2D(Objet2D* head);
     ChainObjet2D(Objet2D* head, Objet2D* tail);
 
-    // Setter & Getters
+    // Setters & Getters
     void setHead(const Objet2D& obj);
     void setTail(const Objet2D& obj);
 
-    Objet2D* setHead();
-    Objet2D* setTail();
+    Objet2D* getHead();
+    Objet2D* getTail();
 
     // Methods
     Objet2D* getFromIndex(int index);

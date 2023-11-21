@@ -8,6 +8,8 @@
 #include "Rectangle.h"
 #include "Carre.h"
 
+#include "ChainObjet2D.h"
+
 int main(){
     // Test carré et rectangle
     std::cout << "Debut du programme" << std::endl;
@@ -30,8 +32,12 @@ int main(){
 
     // Test chain
     std::cout << std::endl << "Partie 2" << std::endl;
+    ChainObjet2D *chain = new ChainObjet2D(obj1);
 
+    chain->addAtTail(*obj1);
+    chain->checkIfAllGood();
 
     delete obj1, obj2;
+    delete chain;
     return 0;
 }
