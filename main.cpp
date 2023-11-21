@@ -16,5 +16,11 @@ int main(){
     Objet2D *obj2 = new Carre(5);
     std::cout << obj2->afficheInfo() << std::endl;
 
+    // Test pointeur Suivant
+    obj1->setSuivant(obj2);
+    obj1->getSuivant()->setX(10);
+    std::cout << obj1->getSuivant()->afficheInfo() << std::endl;
+
+    delete obj1, obj2;
     return 0;
 }

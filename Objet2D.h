@@ -8,6 +8,8 @@
 #include <iostream>
 
 class Objet2D {
+private:
+    Objet2D* Suivant;
 protected:
     int x,y;
 public:
@@ -15,6 +17,15 @@ public:
     Objet2D();
     Objet2D(int x);
     Objet2D(int x, int y);
+
+    // Setters & Getters
+    void setX(int x);
+    void setY(int y);
+    int getX();
+    int getY();
+
+    void setSuivant(Objet2D* obj);
+    Objet2D* getSuivant();
 
     // Methods
     virtual int getPerimetre() = 0;
