@@ -32,10 +32,16 @@ int main(){
 
     // Test chain
     std::cout << std::endl << "Partie 2" << std::endl;
-    ChainObjet2D *chain = new ChainObjet2D(obj1);
 
-    chain->addAtTail(*obj1);
+    obj1->setSuivant(nullptr); // Reset link
+
+    ChainObjet2D *chain = new ChainObjet2D(obj1);
     chain->checkIfAllGood();
+
+    chain->printChain();
+    chain->addAtTail(obj2);
+    chain->checkIfAllGood();
+    chain->printChain();
 
     delete obj1, obj2;
     delete chain;

@@ -20,18 +20,18 @@ public:
     ChainObjet2D(Objet2D* head, Objet2D* tail);
 
     // Setters & Getters
-    void setHead(const Objet2D& obj);
-    void setTail(const Objet2D& obj);
+    void setHead(Objet2D *obj);
+    void setTail(Objet2D *obj);
 
     Objet2D* getHead();
     Objet2D* getTail();
 
     // Methods
-    Objet2D* getFromIndex(int index);
+    Objet2D* getFromIndex(int index, bool error_if_out_of_range = true);
 
-    void addAtIndex(const Objet2D& obj, int index);
-    void addAtHead(const Objet2D& obj);
-    void addAtTail(const Objet2D& obj);
+    void addAtIndex(Objet2D *obj, int index);
+    void addAtHead(Objet2D *new_obj);
+    void addAtTail(Objet2D *obj);
 
     void removeFromIndex(int index);
     void removeHead();
@@ -40,6 +40,8 @@ public:
     void deleteFromIndex(int index);
     void deleteHead();
     void deleteTail();
+
+    void printChain();
 };
 
 
