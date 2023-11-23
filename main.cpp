@@ -117,6 +117,16 @@ void resolution3(){
     chain->addAtTail(obj3);
     chain->printChain();
     // Obj1 -> Obj2 -> Obj1
+
+    // Itérations
+    Objet2D* current = chain->getHead();
+    while (current != nullptr){
+        std::cout << current->getAire() << std::endl;
+        if(current->getX()==current->getY()){ // Si c'est un carré
+            break;
+        }
+        current = current->getSuivant();
+    }
 }
 
 
