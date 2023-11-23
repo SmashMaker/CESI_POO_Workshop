@@ -16,7 +16,7 @@ Objet2D* ChainObjet2D::processTail() {
     Objet2D* current_obj = this->getHead();
 
     // Go all the way through the chain
-    while (current_obj != nullptr && current_obj->getSuivant() != current_obj){
+    while (current_obj->getSuivant() != nullptr && current_obj->getSuivant() != current_obj){
         current_obj = current_obj->getSuivant();
     }
 
@@ -81,11 +81,18 @@ Objet2D *ChainObjet2D::getFromIndex(int index, bool error_if_out_of_range) {
 }
 
 void ChainObjet2D::addAtIndex(Objet2D *new_obj, int index) {
-
+    Objet2D* current_obj = this->getFromIndex(index, true);
+    if(current_obj == nullptr) {
+        this->addAtTail(new_obj);
+    } else {
+        new_obj->setSuivant(current_obj->getSuivant());
+        current_obj->setSuivant(new_obj);
+    }
 }
 
 void ChainObjet2D::addAtHead(Objet2D *new_obj) {
-
+    new_obj->setSuivant(this->getHead());
+    this->setHead(new_obj);
 }
 
 void ChainObjet2D::addAtTail(Objet2D *new_obj) {
@@ -99,11 +106,25 @@ void ChainObjet2D::removeFromIndex(int index) {
 }
 
 void ChainObjet2D::removeHead() {
-
+    Objet2D* second_head = this->getHead()->getSuivant();
+    this->setHead(second_head);
 }
 
 void ChainObjet2D::removeTail() {
+    Objet2D* current_obj1 = this->getHead()->getSuivant();
+    Objet2D* current_obj2 = this->getHead();
 
+    if(current_obj1 == nullptr) { // Si il n'y a qu'un seul élément
+        this->setHead(nullptr);
+        this->setTail(nullptr);
+    } else { // Si il y a plus d'un élément
+        while(current_obj1->getSuivant() != nullptr) {
+            current_obj1 = current_obj1->getSuivant();
+            current_obj2 = current_obj2->getSuivant();
+        }
+        current_obj2->setSuivant(nullptr);
+        this->setTail(current_obj2);
+    }
 }
 
 void ChainObjet2D::deleteFromIndex(int index) {
@@ -125,5 +146,6 @@ void ChainObjet2D::printChain() {
         std::cout << current_obj->afficheInfo() << std::endl;
         current_obj = current_obj->getSuivant();
     }
+    std::cout << std::endl;
 }
 

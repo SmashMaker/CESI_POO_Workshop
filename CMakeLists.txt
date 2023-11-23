@@ -10,4 +10,6 @@ add_executable(CESI_POO_Workshop_4 main.cpp
         Carre.h
         Carre.cpp
         ChainObjet2D.h
-        ChainObjet2D.cpp)
+        ChainObjet2D.cpp
+        NewChainObjet2D.h
+        NewChainObjet2D.cpp)
