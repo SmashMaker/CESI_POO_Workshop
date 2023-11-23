@@ -106,8 +106,21 @@ void resolution2v2(){
     delete chain;
 }
 
+void resolution3(){
+    std::cout << std::endl << "#### Partie 3 ####" << std::endl;
+
+    Objet2D* obj1 = new Rectangle(5, 10);
+    Objet2D* obj2 = new Carre(5);
+    Objet2D* obj3 = new Rectangle(10, 10);
+    NewChainObjet2D *chain = new NewChainObjet2D(obj1);
+    chain->addAtTail(obj2);
+    chain->addAtTail(obj3);
+    chain->printChain();
+    // Obj1 -> Obj2 -> Obj1
+}
+
 
 int main(){
-    resolution2v2();
+    resolution3();
     return 0;
 }
