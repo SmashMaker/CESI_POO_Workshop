@@ -11,3 +11,5 @@ Demandez aux étudiants de réutiliser les classes Objet2D, Cube, Rectangle du W
 4. Demandez à un étudiant de passer au vidéo projecteur et de présenter ses résultats. Demandez à l’étudiant de commenter ligne à ligne son code. Les autres étudiants peuvent à leur tour poser des questions. Répondez aux questions des étudiants.
 
 5. Proposez aux étudiants de réfléchir à la gestion de la mémoire. Comment libérer de la mémoire dans leurs programmes ? Qu’advient-il des objets internes de la classe de stockage ? Aidez-les dans leurs raisonnements. Faites des schémas pour expliquer. Faites leurs construire un destructeur qui préviendra des fuites de mémoires. Que va faire le destructeur si la classe de stockage utilise les références des objets ? Si un destructeur de la classe de stockage est utilisé, est-il alors nécessaire de supprimer les objets stockés un à un dans le main ?
+
+Problème quand on supprime une chaîne : Les objet2d ne sont pas supprimé. Il faudrait utiliser une fonction pour les supprimer avant de supprimer la chaine
